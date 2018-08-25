@@ -1,0 +1,270 @@
+<html>
+<head>
+<script>
+var c1=-2,c2=-2,c3=-2,c4=-2,c5=-2,c6=-2,c7=-2;
+function fun()
+{
+   var a=check("1");
+   var b=check("2");
+   var c=check("3");
+   var d=check("4");
+   var e=check("5");
+   var f=check("6");
+   if(c7>1)
+   {
+   var g=check("7");
+   var total=c1+c2+c3+c4+c5+c6+c7;
+   var reesh=((a*c1)+(b*c2)+(c*c3)+(d*c4)+(e*c5)+(f*c6)+(g*c7))/(total);
+   document.getElementById('result').innerHTML="Congratulations your SGPA is "+reesh;
+   }
+   else{
+   var total=c1+c2+c3+c4+c5+c6;
+   var reesh=((a*c1)+(b*c2)+(c*c3)+(d*c4)+(e*c5)+(f*c6))/(total);
+   document.getElementById('result').innerHTML="Congratulations your SGPA is "+reesh;
+   }
+   
+}
+function check(m)
+{
+  var m1=-1;
+  for(i=1;i<=8;i++)
+  {
+	 var temp=m+i;
+	 if(document.getElementById(temp).checked)
+	 {
+	 var m1=document.getElementById(temp).value;
+	 return m1;
+	 }
+  }
+  return m1;
+}
+
+function check_sem()
+{
+  var sem=document.getElementById('semesters');
+    var b= sem.value;
+	if(b=="one")
+	{
+	c1=4;
+	c2=4;
+	c3=3;
+	c4=5;
+	c5=2;
+	c6=3;
+	c7=-2;
+	document.getElementById('seven_sub').style.visibility = "hidden";
+	document.getElementById('course_code1').innerHTML="15MT1001";
+	document.getElementById('course_name1').innerHTML="SINGLE VARIABLE CALCULUS AND MATRIX ALGEBRA";
+	document.getElementById('course_code2').innerHTML="15PH1001";
+	document.getElementById('course_name2').innerHTML="ENGINEERING MATERIALS";
+	document.getElementById('course_code3').innerHTML="15GN1004";
+	document.getElementById('course_name3').innerHTML="INTRODUCTION TO ENGINEERING";
+	document.getElementById('course_code4').innerHTML="15CS1101";
+	document.getElementById('course_name4').innerHTML="C PROGRAMMING AND DATA STRUCTURES-I";
+	document.getElementById('course_code5').innerHTML="15EN1001";
+	document.getElementById('course_name5').innerHTML="RUDIMENTS OF COMMUNICATION SKILLS";
+	document.getElementById('course_code6').innerHTML="15ME1002";
+	document.getElementById('course_name6').innerHTML="ENGINEERING GRAPHICS WITH AUTO CAD";
+	}
+	else if(b=="two")
+	{
+	c1=5;
+	c2=4;
+	c3=2;
+	c4=2;
+	c5=2;
+	c6=4;
+	c7=4;
+	document.getElementById('seven_sub').style.visibility = "visible";
+	document.getElementById('course_code1').innerHTML="15CS1201";
+	document.getElementById('course_name1').innerHTML="C PROGRAMMING AND DATA STRUCTURES-II";
+	document.getElementById('course_code2').innerHTML="15CY1001";
+	document.getElementById('course_name2').innerHTML="ENGINEERING CHEMISTRY";
+	document.getElementById('course_code3').innerHTML="15EN1202";
+	document.getElementById('course_name3').innerHTML="INTERPERSONAL COMMUNICATION SKILLS";
+	document.getElementById('course_code4').innerHTML="15GN1002";
+	document.getElementById('course_name4').innerHTML="HUMAN VALUES";
+	document.getElementById('course_code5').innerHTML="15GN1003";
+	document.getElementById('course_name5').innerHTML="MEASUREMENTS";
+	document.getElementById('course_code6').innerHTML="15ME1001";
+	document.getElementById('course_name6').innerHTML="MECHANICS";
+	document.getElementById('course_code7').innerHTML="15MT1203";
+	document.getElementById('course_name7').innerHTML="MULTIVARIATE CALCULUS";
+	}
+	else if(b=="three")
+	{
+	c1=4;
+	c2=4;
+	c3=4;
+	c4=4;
+	c5=2;
+	c6=2;
+	c7=-2;
+	document.getElementById('seven_sub').style.visibility = "hidden";
+	document.getElementById('course_code1').innerHTML="15CS2002";
+	document.getElementById('course_name1').innerHTML="OBJECT ORIENTED PROGRAMMING";
+	document.getElementById('course_code2').innerHTML="15CS2003";
+	document.getElementById('course_name2').innerHTML="DISCRETE MATHEMATICS";
+	document.getElementById('course_code3').innerHTML="15CS2105";
+	document.getElementById('course_name3').innerHTML="SOFTWARE ENGINEERING";
+	document.getElementById('course_code4').innerHTML="15EC1101";
+	document.getElementById('course_name4').innerHTML="DIGITAL SYSTEM DESIGN";
+	document.getElementById('course_code5').innerHTML="15EN2103";
+	document.getElementById('course_name5').innerHTML="PROFESSIONAL COMMUNICATION SKILLS";
+	document.getElementById('course_code6').innerHTML="15GN1001";
+	document.getElementById('course_name6').innerHTML="ECOLOGY AND ENVIRONMENT";
+	}
+  
+}
+setInterval("check_sem();",100);
+</script>
+<style>
+button
+{
+margin-left: auto;
+margin-right: auto; 
+display: block;
+}
+table
+{
+margin-left: auto;
+margin-right: auto; 
+}
+table,td
+{
+border: 1px solid black;
+border-collapse: collapse;
+}
+td
+{
+font-family: Helvetica;
+padding-top: 5px;
+padding-bottom: 5px;
+}
+#odd
+{
+background-color: #f2f2f2;
+}
+input
+{
+margin-left: 15px;
+}
+</style>
+</head>
+<body>
+
+<select id="semesters" style="margin-left: auto; margin-right: auto; display: block; margin-bottom: 20px;">
+ <option value="one">SEMESTER-I</option>
+ <option value="two">SEMESTER-II</option>
+ <option value="three">SEMESTER-III</option>
+</select>
+
+<table>
+<tr id="odd">
+<th>COURSE CODE</th>
+<th>COURSE NAME</th>
+<th>GRADES</th>
+</tr>
+<tr>
+<td id="course_code1">15CS2002</td>
+<td id="course_name1">OBJECT ORIENTED PROGRAMMING</td>
+<td><input type="radio" name="1" id="11" value="10">O</input>
+<input type="radio" name="1" id="12" value="9">A+</input>
+<input type="radio" name="1" id="13" value="8">A</input>
+<input type="radio" name="1" id="14" value="7">B+</input>
+<input type="radio" name="1" id="15" value="6">B</input>
+<input type="radio" name="1" id="16" value="5">C</input>
+<input type="radio" name="1" id="17" value="4">P</input>
+<input type="radio" name="1" id="18" value="0">F</input>
+</td>
+</tr>
+<tr id="odd">
+<td id="course_code2">15CS2003</td>
+<td id="course_name2">DISCRETE MATHEMATICS</td>
+<td><input type="radio" name="2" id="21" value="10">O</input>
+<input type="radio" name="2" id="22" value="9">A+</input>
+<input type="radio" name="2" id="23" value="8">A</input>
+<input type="radio" name="2" id="24" value="7">B+</input>
+<input type="radio" name="2" id="25" value="6">B</input>
+<input type="radio" name="2" id="26" value="5">C</input>
+<input type="radio" name="2" id="27" value="4">P</input>
+<input type="radio" name="2" id="28" value="0">F</input>
+</td>
+</tr>
+
+<tr>
+<td id="course_code3">15CS2105</td>
+<td id="course_name3">SOFTWARE ENGINEERING</td>
+<td><input type="radio" name="3" id="31" value="10">O</input>
+<input type="radio" name="3" id="32" value="9">A+</input>
+<input type="radio" name="3" id="33" value="8">A</input>
+<input type="radio" name="3" id="34" value="7">B+</input>
+<input type="radio" name="3" id="35" value="6">B</input>
+<input type="radio" name="3" id="36" value="5">C</input>
+<input type="radio" name="3" id="37" value="4">P</input>
+<input type="radio" name="3" id="38" value="0">F</input>
+</td>
+
+<tr id="odd">
+<td id="course_code4">15EC1101</td>
+<td id="course_name4">DIGITAL SYSTEM DESIGN</td>
+<td><input type="radio" name="4" id="41" value="10">O</input>
+<input type="radio" name="4" id="42" value="9">A+</input>
+<input type="radio" name="4" id="43" value="8">A</input>
+<input type="radio" name="4" id="44" value="7">B+</input>
+<input type="radio" name="4" id="45" value="6">B</input>
+<input type="radio" name="4" id="46" value="5">C</input>
+<input type="radio" name="4" id="47" value="4">P</input>
+<input type="radio" name="4" id="48" value="0">F</input>
+</td>
+</tr>
+
+<tr>
+<td id="course_code5">15EN2103</td>
+<td id="course_name5">PROFESSIONAL COMMUNICATION SKILLS</td>
+<td><input type="radio" name="5" id="51" value="10">O</input>
+<input type="radio" name="5" id="52" value="9">A+</input>
+<input type="radio" name="5" id="53" value="8">A</input>
+<input type="radio" name="5" id="54" value="7">B+</input>
+<input type="radio" name="5" id="55" value="6">B</input>
+<input type="radio" name="5" id="56" value="5">C</input>
+<input type="radio" name="5" id="57" value="4">P</input>
+<input type="radio" name="5" id="58" value="0">F</input>
+</td>
+
+<tr id="odd">
+<td id="course_code6">15GN1001</td>
+<td id="course_name6">ECOLOGY</td>
+<td><input type="radio" name="6" id="61" value="10">O</input>
+<input type="radio" name="6" id="62" value="9">A+</input>
+<input type="radio" name="6" id="63" value="8">A</input>
+<input type="radio" name="6" id="64" value="7">B+</input>
+<input type="radio" name="6" id="65" value="6">B</input>
+<input type="radio" name="6" id="66" value="5">C</input>
+<input type="radio" name="6" id="67" value="4">P</input>
+<input type="radio" name="6" id="68" value="0">F</input>
+</td>
+</tr>
+
+<tr id="seven_sub">
+<td id="course_code7">15GN1001</td>
+<td id="course_name7">ECOLOGY</td>
+<td><input type="radio" name="7" id="71" value="10">O</input>
+<input type="radio" name="7" id="72" value="9">A+</input>
+<input type="radio" name="7" id="73" value="8">A</input>
+<input type="radio" name="7" id="74" value="7">B+</input>
+<input type="radio" name="7" id="75" value="6">B</input>
+<input type="radio" name="7" id="76" value="5">C</input>
+<input type="radio" name="7" id="77" value="4">P</input>
+<input type="radio" name="7" id="78" value="0">F</input>
+</td>
+</tr>
+
+
+</tr>
+</tr>
+</table>
+<p id="result" style="text-align: center; font-family: Helvetica; color: green;"></p>
+<button onclick="fun();">GET DATA</button>
+</body>
+</html>
